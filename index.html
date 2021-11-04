@@ -21,27 +21,38 @@
         <h1>Escher Library</h1>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id laborum voluptatem laboriosam, officiis sapiente sed provident, nulla perspiciatis architecto facilis itaque obcaecati, voluptate suscipit voluptas ratione in fugiat sit ab!</p>
     
-        <button type="button" class="btn btn-light">Add Book</button>
+        <button type="button" class="btn btn-light" onclick="showForm()">Add Book</button>
 
-        <form action="book.js">
+        <form action="book.js" id="newBookForm" class="was-validated">
             <div class="mb-3 mt-3">
                 <label for="title" class="form-label">Title:</label>
-                <input type="text" name="title" id="titlein" class="form-control" placeholder="Enter title">
+                <input type="text" name="title" id="titlein" class="form-control" placeholder="Name of Book" required>
+                <div class="valid-feedback">Ok.</div>
+                <div class="invalid-feedback">Please enter a book title.</div>
             </div>
 
             <div class="mb-3">
                 <label for="author" class="form-label">Author:</label>
-                <input type="text" name="author" id="authorin" class="form-control" placeholder="Enter author">
+                <input type="text" name="author" id="authorin" class="form-control" placeholder="Book's Author" required>
+                <div class="valid-feedback">Ok.</div>
+                <div class="invalid-feedback">Please enter the author's name.</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="pages" class="form-label">Number of Pages:</label>
+                <input type="number" name="pages" id="pagesin" class="form-control" placeholder="0" required>
+                <div class="valid-feedback">Ok.</div>
+                <div class="invalid-feedback">Enter the number of pages in the book.</div>
             </div>
 
             <div class="form-check mb-3">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox" name="readin">
+                    <input class="form-check-input" type="checkbox" name="read" id="readin" >
                     Has been read?
                 </label>
             </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-primary" onclick="handleForm()">Submit</button>
         </form>
     
         <div class="container mt-3">
@@ -52,16 +63,13 @@
                         <th>Author</th>
                         <th>Pages</th>
                         <th>Read</th>
+                        <th>Delete</th>
+                        <th>-</th>
                     </tr>
                 </thead>
 
-                <tbody>
-                    <tr>
-                        <td>FakeBook</td>
-                        <td>John Doe</td>
-                        <td>999</td>
-                        <td>yes</td>
-                    </tr>
+                <tbody id="book-table">
+                    
                 </tbody>
             </table>
 
