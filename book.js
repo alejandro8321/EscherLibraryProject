@@ -134,20 +134,17 @@ function deleteBook(book){
 
 
 function toggleStatus(book){
-    /*
-    alert("library size: " + myLibrary.length);
 
     //get row index for book
     let i = book.parentNode.parentNode.dataset.index;
 
-    alert(i);
-
     //toggle book obj read variable
     myLibrary[i].toggleRead();
-
+    
     //alert user of the new status of book
     alert("Read status is now: " + myLibrary[i].read);
 
     //display the read status in the table
-    book.parentNode.previousSibling.previousSibling.innerText = myLibrary[i].read;*/
+    book.parentNode.previousSibling.previousSibling.innerText = myLibrary[i].read;
+    
 }
